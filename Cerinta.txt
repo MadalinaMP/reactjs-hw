@@ -1,0 +1,3 @@
+https://reactjs.org/docs/thinking-in-react.html
+
+parcurgeti si implementati exemplu din link-ul de mai sus
