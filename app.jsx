@@ -78,21 +78,23 @@ class ProductTable extends React.Component {
 }
 
 class SearchBar extends React.Component {
+    //step5: add inverse data flow
+    constructor(props) {
+        super(props);
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+        this.handleInStockChange = this.handleInStockChange.bind(this);
+    }
+
+    handleFilterTextChange(e) {
+        this.props.onFilterTextChange(e.target.value);
+    }
+
+    handleInStockChange(e) {
+        this.props.onInStockChange(e.target.checked);
+    }
+    
     render() {
-        //step5: add inverse data flow
-        constructor(props) {
-            super(props);
-            this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-            this.handleInStockChange = this.handleInStockChange.bind(this);
-        }
 
-        handleFilterTextChange(e) {
-            this.props.onFilterTextChange(e.target.value);
-        }
-
-        handleInStockChange(e) {
-            this.props.onInStockChange(e.target.checked);
-        }
         //step 4:
         // const filterText = this.props.filterText;
         // const inStockOnly = this.props.inStockOnly;
